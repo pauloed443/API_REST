@@ -39,14 +39,20 @@
                 <tbody>
                     <tr>
                     <?php
-                        foreach ($lista as $item) {
-                            echo '<th scope="row">'.$lista['Id'].'</th>';
-                            echo '<td>'.$lista['Nome'].'</td>';
-                            echo '<td>'.$lista['Email'].'</td>';
-                            echo '<td>'.$lista['Senha'].'</td>';
-                            echo '<td>'.$lista['Id_Tipo_Usuario'].'</td>';
-                            echo '<td><a href="/del='.$lista['Id'].'">delete</a></td>';
-                        
+                        if (count($lista) > 0){
+                            foreach ($lista as $item) {
+                                echo '<th scope="row">'.$lista['Id'].'</th>';
+                                echo '<td>'.$lista['Nome'].'</td>';
+                                echo '<td>'.$lista['Email'].'</td>';
+                                echo '<td>'.$lista['Senha'].'</td>';
+                                echo '<td>'.$lista['Id_Tipo_Usuario'].'</td>';
+                                echo '<td><a href="/del='.$lista['Id'].'">delete</a></td>';
+
+                            }
+                        }
+                        else{
+                            echo '<th scope="row">-</th>';
+                            echo '<td>Nenhum Usuário encontrado</td>';
                         }
                     ?>
                    </tr>
