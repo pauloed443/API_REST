@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset ="utf-8">
+	<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+	<title>Cadastro Usuário</title>
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	
+</head>
+<body>
+    <pre>
+    </pre>
+    <div class="container-fluid pl-0 pr-0">
+        <div class="container bg-dark rounded">
+            <h1 class="mt-5 text-light"><i>Formulario de Cadastro</i></h1><hr><br>
+                
+            <form class="form-group" action="" method="POST">
+            	<div class="form-group row">
+                    <div class="col-6">
+                        <input type="hidden" name="Id" <?php echo'value="'.$info['Id'].'" '; ?>>
+                        <label for="inputText" class="sr-only mt-2">Nome: </label>
+                        <input type="text" class="form-control" name="Nome" <?php echo'value="'.$info['Nome'].'" '; ?>placeholder="Nome" required autofocus>
+                    </div>
+                    <div class="col-6">
+                        <label for="inputText" class="sr-only mt-2">Email: </label>
+                        <input type="text" class="form-control" name="Email" value="<?php echo $info['Email']?>" placeholder="Email" required>
+                    </div>
+            	</div>
+                <div class="form-group row">
+                    <div class="col-3">
+                        <label for="inputText" class="sr-only mt-2">Senha: </label>
+                        <input type="tel" class="form-control" name="Senha" value="<?php echo $info['Senha']?>" placeholder="Senha" required>
+                    </div>
+                </div>
+            	<input type="submit" name="Salvar" class="btn btn-outline-light" value="Salvar">
+            </form>
+                <form action="./" method="get">
+                    <input type="submit" name="Cancelar" class="btn btn-outline-light" size="6px" value="Cancelar">
+                </form>
+        </div>
+    </div>
+</body>
+</html>
