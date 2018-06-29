@@ -64,7 +64,8 @@
         								SET Nome = :nome,
         									Email = :email,
         									Senha = :senha
-        								WHERE Email = :email");
+        								WHERE Id = :id");
+        	$sql->bindValue(":id", $lista['Id']);
         	$sql->bindValue(":nome", $lista['Nome']);
         	$sql->bindValue(":email", $lista['Email']);
         	$sql->bindValue(":senha", $lista['Senha']);
