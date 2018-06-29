@@ -15,9 +15,9 @@
             <div>
             <table class="table table-dark">
                 <thead>
-                    <form action="" method="post">
+                    <form action="./" method="post">
                         <div class="row">
-                            <input type="text" class="col-6 ml-3 mb-3 form-control" placeholder="Digite um valor para pesquisa">
+                            <input type="text" name="nome" class="col-6 ml-3 mb-3 form-control" placeholder="Digite um nome para pesquisa">
                             <input type="submit" class="btn btn-dark ml-2 mb-3" value="Pesquisar">
                         </div>
                     </form>
@@ -37,25 +37,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
                     <?php
                         if (count($lista) > 0){
-                            foreach ($lista as $item) {
-                                echo '<th scope="row">'.$lista['Id'].'</th>';
-                                echo '<td>'.$lista['Nome'].'</td>';
-                                echo '<td>'.$lista['Email'].'</td>';
-                                echo '<td>'.$lista['Senha'].'</td>';
-                                echo '<td>'.$lista['Id_Tipo_Usuario'].'</td>';
-                                echo '<td><a href="/del='.$lista['Id'].'">delete</a></td>';
-
-                            }
+                            foreach ($lista as $item): 
+                    			echo '<tr >';
+	                                echo '<th scope="row">'.$item['Id'].'</th>';
+	                                echo '<td>'.$item['Nome'].'</td>';
+	                                echo '<td>'.$item['Email'].'</td>';
+	                                echo '<td>'.$item['Senha'].'</td>';
+	                                echo '<td>'.$item['Descricao'].'</td>';
+	                                echo '<td><a href="./edt/'.$item['Id'].'">Editar</a> <a href="./del/'.$item['Id'].'">Excluir</a></td>';
+                   				echo '</tr>';
+                            endforeach;
                         }
                         else{
                             echo '<th scope="row">-</th>';
                             echo '<td>Nenhum Usuário encontrado</td>';
                         }
                     ?>
-                   </tr>
                 </tbody>
             </table>
             </div>
