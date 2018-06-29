@@ -13,15 +13,12 @@
 </head>
 <body>
     <pre>
-    <?php
-        $lista;
-    ?>
     </pre>
     <div class="container-fluid pl-0 pr-0">
         <div class="container bg-dark rounded">
             <h1 class="mt-5 text-light"><i>Formulario de Cadastro</i></h1><hr><br>
                 
-            <form class="form-group" action="/" method="POST">
+            <form class="form-group" action="./add-user" method="POST">
             	<div class="form-group row">
                     <div class="col-6">
                         <label for="inputText" class="sr-only mt-2">Nome: </label>
@@ -29,26 +26,35 @@
                     </div>
                     <div class="col-6">
                         <label for="inputText" class="sr-only mt-2">Email: </label>
-                        <input type="text" class="form-control" name="Endereco" placeholder="Email" required>
+                        <input type="text" class="form-control" name="Email" placeholder="Email" required>
                     </div>
             	</div>
                 <div class="form-group row">
                     <div class="col-3">
                         <label for="inputText" class="sr-only mt-2">Senha: </label>
-                        <input type="tel" class="form-control" name="Fone" placeholder="Senha" required>
+                        <input type="tel" class="form-control" name="Senha" placeholder="Senha" required>
                     </div>
                     <div class="col-2">
                         <label for="inputText" class="sr-only mt-2">Tipo Usuario: </label>
-                        <select  class="form-control" required>
+                        <select  class="form-control" name="tipo_usuario" required>
+                            <option></option>
                             <?php
-                                echo '<option>'.$lista['Descricao'].'</option>'
+                                if (count($lista) > 0){
+                                    foreach ($lista as $item) {
+                                        echo '<option value="'.$item['Id'].'">'.$item['Descricao'].'</option>';
+                                    }
+                                }else{
+                                }
                             ?>
                         </select>
+
                     </div>
                 </div>
             	<input type="submit" name="Cadastrar" class="btn btn-outline-light" value="Cadastrar">
-                <input type="" onclick="" name="Cancelar" class="btn btn-outline-light" size="6px" value="Cancelar">
             </form>
+                <form action="./" method="get">
+                    <input type="submit" name="Cancelar" class="btn btn-outline-light" size="6px" value="Cancelar">
+                </form>
         </div>
     </div>
 </body>
